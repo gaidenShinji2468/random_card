@@ -21,11 +21,21 @@
 }
 
 #card ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 5px;
+    width: 300px;
     height: 96px;
 }
 
 #card li {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 7px;
+}
+
+/* Aplicar estilos a los iconos */
+#card li svg {
+    margin: 5px 0;
 }
