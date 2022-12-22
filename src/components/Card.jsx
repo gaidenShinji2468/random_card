@@ -10,8 +10,7 @@ import {
 } from "react-bootstrap-icons";
 
 function Card({user, color})
-{
-    
+{ 
     return (
         <section id="card">
 	    <h2 style={{"color": color}}>
