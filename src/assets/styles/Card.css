@@ -1,5 +1,6 @@
-#card {
+.card {
     width: 400px;
+    height: 497px;
     background-color: white;
     padding: 50px;
     border-radius: 12px;
@@ -9,18 +10,18 @@
     gap: 2rem;
 }
 
-#card h2 {
+.card h2 {
     text-align: center;
     font-size: 30px;
 }
 
-#card figure img{
+.card figure img{
     width: 150px;
     height: 150px;
     border-radius: 50%;
 }
 
-#card ul {
+.card ul {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -29,13 +30,31 @@
     height: 96px;
 }
 
-#card li {
+.card li {
     display: flex;
     align-items: flex-start;
     gap: 7px;
 }
 
 /* Aplicar estilos a los iconos */
-#card li svg {
+.card li svg {
     margin: 5px 0;
+}
+
+.card ul + div {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#update, #delete {
+    cursor: pointer;
+}
+
+#update svg:hover {
+    fill: blue;
+}
+
+#delete svg:hover {
+    color: red;
 }

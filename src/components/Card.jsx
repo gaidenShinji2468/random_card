@@ -1,44 +1,43 @@
 import "/src/assets/styles/Card.css";
 import {
-    useState,
-    useEffect
-} from "react";
-import {
     EnvelopeFill,
-    TelephoneFill,
-    GeoAltFill
+    PencilSquare,
+    Trash
 } from "react-bootstrap-icons";
 
-function Card({user, color})
+function Card({
+    sendToUpdate,
+    user,
+    color,
+    remove
+})
 { 
     return (
-        <section id="card">
-	    <h2 style={{"color": color}}>
-	        {`${user.name.title} ${user.name.first} ${user.name.last}`}
+        <section className="card">
+	    <h2 style={{color}}>
+	        {`${user.first_name} ${user.last_name}`}
 	    </h2>
 	    <figure>
-                <img type="image/jgp" src={user.picture.large} alt={`This is a ${user.name.first} ${user.name.last} photo`}/>
+	        <img type="image/jpg" src="./unknown_user.jpg" alt="User profile photo"/>
 	    </figure>
-	    <ul style={{"color": color}}>
-                <li>
+	    <ul style={{color}}>
+	        <li>
 	            <EnvelopeFill
-	                size={14}
+                        size="14"
 	                color={color}
 	            />{user.email}
 	        </li>
-                <li>
-	            <TelephoneFill
-	                size={14}
-	                color={color}
-	            />{user.phone}
-	        </li>
-                <li>
-	            <GeoAltFill
-	                size={14}
-	                color={color}
-	            />{`${user.location.country} ${user.location.state} ${user.location.city}`}
-	        </li>
 	    </ul>
+	    <div>
+	        <span
+	            id="update"
+	            onClick={() => sendToUpdate(user)}
+	        ><PencilSquare/></span>
+	        <span
+	            id="delete"
+	            onClick={() => remove(user.id)}
+	        ><Trash/></span>
+	    </div>
 	</section>
     );
 }
